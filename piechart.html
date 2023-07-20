@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Piechart</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('myjio'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['table']});
+  google.charts.setOnLoadCallback(drawTable);
+
+  function drawTable() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Name');
+    data.addColumn('number', 'Salary');
+    data.addColumn('boolean', 'Full Time Employee');
+    data.addRows([
+      ['Mike',  {v: 10000, f: '$10,000'}, true],
+      ['Jim',   {v:8000,   f: '$8,000'},  false],
+      ['Alice', {v: 12500, f: '$12,500'}, true],
+      ['Bob',   {v: 7000,  f: '$7,000'},  true]
+    ]);
+
+    var table = new google.visualization.Table(document.getElementById('bsnl'));
+
+    table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+  }
+</script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Weight'],
+          [ 8,      12],
+          [ 4,      5.5],
+          [ 11,     14],
+          [ 4,      5],
+          [ 3,      3.5],
+          [ 6.5,    7]
+        ]);
+
+        var options = {
+          title: 'Age vs. Weight comparison',
+          hAxis: {title: 'Age', minValue: 0, maxValue: 15},
+          vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('weight'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawVisualization);
+
+  function drawVisualization() {
+    // Some raw data (not necessarily accurate)
+    var data = google.visualization.arrayToDataTable([
+      ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+      ['2004/05',  165,      938,         522,             998,           450,      614.6],
+      ['2005/06',  135,      1120,        599,             1268,          288,      682],
+      ['2006/07',  157,      1167,        587,             807,           397,      623],
+      ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+      ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+    ]);
+
+    var options = {
+      title : 'Monthly Coffee Production by Country',
+      vAxis: {title: 'Cups'},
+      hAxis: {title: 'Month'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart'],});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regionmap'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+
+
+</head>
+<body>
+    <h3>Find a Pie Chart</h3>
+        <h1 class="red">Valex Dashboard</h1>
+        <hr size="5" width="10%" color="yellow"></hr>
+
+
+
+        <div class="task">
+          
+
+            <div class="task1">
+              <h3>Pie Chart</h3>
+              <p>A pie chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over slices.</p>
+                <div id="piechart" class="chart"></div>
+            
+            </div>
+
+            <div class="task2">
+              <h3>Scatter Chart</h3>
+              <p>Scatter charts plot points on a graph. When the user hovers over the points, tooltips are displayed with more information.
+
+                Google scatter charts are rendered within the browser using SVG or VML depending on browser capabilities.</p>
+                <div id="weight" class="table"></div>
+               
+            </div>
+
+            <div class="task3">
+              <h3>Combo Chart</h3>
+              <p>A chart that lets you render each series as a different marker type from the following list: line, area, bars, candlesticks, and stepped area.</p>
+                <div id="chart_div" style="width: 550px; height: 350px;"></div>
+               
+            </div>
+        </div>
+
+  <div class="box">
+              <p><h2>Our gallery provides a variety of charts designed to address your data visualization needs. These charts are based on pure HTML5/SVG technology (adopting VML for old IE versions), so no plugins are required. All of them are interactive, and many are pannable and zoomable. Adding these charts to your page can be done in a few simple steps.
+                     Some additional community-contributed charts can be found on the Additional Charts page.</h2></p>
+        
+          <div class="box1">
+          <h3 class="red">Visualization: GeoChart</h3>
+          
+          <div id="regionmap" class="map"></div>
+          <p><h2>
+            A geochart is a map of a country, a continent, or a region with areas identified in one of three ways:
+            The region mode colors whole regions, such as countries, provinces, or states.
+            The markers mode uses circles to designate regions that are scaled according to a value that you specify.
+            The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").
+            A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map; if you want any of that, consider a map visualization instead.
+          </h2></p>
+        </div>
+
+  <div class="hari">
+
+            <div class="hari1">
+              <h3>Multiple Lines</h3>
+              <p>Multiple line are diagrams of a hierarchy of nodes, commonly used to portray superior/subordinate relationships in an organization. A family tree is a type of org chart.</p>
+              <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
+
+            <div class="hari2">
+              <h3>Visualization Area Chart</h3>
+              <p>An area chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.</p>
+              <div id="myjio" class="area"></div>
+            </div>
+
+            <div class="hari3">
+              <h3>Table Chart</h3>
+              <p>A table that can be sorted and paged. Table cells can be formatted using format strings, or by directly inserting HTML as cell values. Numeric values are right-aligned; boolean values are displayed as check marks.</p>
+              <div id="bsnl" class="page"></div>
+            </div>
+  </div>      
+        
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+const xValues = [100,200,300,400,500,600,700,800,900,1000];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      borderColor: "red",
+      fill: false
+    }, { 
+      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      borderColor: "yellow",
+      fill: false
+    }, { 
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+</script>
+
+
+
+
+</body>
+</html>
